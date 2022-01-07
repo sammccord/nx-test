@@ -1,6 +1,10 @@
 {
   "name": "web",
   "private": true,
+  "files": [
+    ".next",
+    "dist"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
