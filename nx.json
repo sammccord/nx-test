@@ -1,6 +1,13 @@
 {
-  "extends": "@nrwl/workspace/presets/core.json",
-  "npmScope": "infura",
+  "npmScope": "scope",
+  "implicitDependencies": {
+    "workspace.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "nx.json": "*"
+  },
   "affected": {
     "defaultBase": "main"
   },
@@ -9,15 +16,25 @@
   },
   "tasksRunnerOptions": {
     "default": {
-      "runner": "@nrwl/workspace/tasks-runners/default",
+      "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ]
+        "cacheableOperations": ["build"],
+        "accessToken": "YzJiNjNiYzMtNWY3Ny00Y2NkLTliMWEtZjNmODM1ODMwY2NkfHJlYWQtd3JpdGU=",
+        "cacheDirectory": "./.nx-cache"
       }
     }
-  }
+  },
+  "targetDependencies": {
+    "build": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      }
+    ]
+  },
+  "workspaceLayout": {
+    "libsDir": "packages",
+    "appsDir": "services"
+  },
+  "defaultProject": "web"
 }

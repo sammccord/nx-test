@@ -1,0 +1,28 @@
+
+> web@ build /home/sammccord/work/nx-test/services/web
+> next build
+
+[36minfo[39m  - Checking validity of types...
+[36minfo[39m  - Creating an optimized production build...
+[36minfo[39m  - Compiled successfully
+[36minfo[39m  - Collecting page data...
+[36minfo[39m  - Generating static pages (0/3)
+[36minfo[39m  - Generating static pages (3/3)
+[36minfo[39m  - Finalizing page optimization...
+
+[4mPage[24m                                       [4mSize[24m     [4mFirst Load JS[24m
+┌ ○ /                                      5 kB           [32m76.5 kB[39m
+├   └ css/b282b959608f58d4.css             718 B
+├   /_app                                  0 B            [32m71.5 kB[39m
+├ ○ /404                                   193 B          [32m71.7 kB[39m
+└ λ /api/hello                             0 B            [32m71.5 kB[39m
++ First Load JS shared by all              [32m71.5 kB[39m
+  ├ chunks/framework-fb2474046cb70d6a.js   42 kB
+  ├ chunks/main-37d911742e8ef4d2.js        28.2 kB
+  ├ chunks/pages/_app-d96e30340d668c14.js  496 B
+  ├ chunks/webpack-514908bffb652963.js     770 B
+  └ css/2974ebc8daa97b04.css               209 B
+
+λ  (Server)  server-side renders at runtime (uses [36mgetInitialProps[39m or [36mgetServerSideProps[39m)
+○  (Static)  automatically rendered as static HTML (uses no initial props)
+

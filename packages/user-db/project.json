@@ -1,0 +1,5 @@
+{
+  "root": "packages/user-db",
+  "projectType": "library",
+  "implicitDependencies": []
+}

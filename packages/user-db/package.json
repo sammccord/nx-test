@@ -1,0 +1,21 @@
+{
+  "name": "@scope/user-db",
+  "version": "6.8.1",
+  "types": "dist/index.d.ts",
+  "umd:main": "dist/index.umd.js",
+  "esmodule": "dist/index.modern.js",
+  "source": "src/index.ts",
+  "main": "dist/index.js",
+  "module": "dist/index.module.js",
+  "unpkg": "dist/index.umd.js",
+  "config": {
+    "unsafe-perm": true
+  },
+  "scripts": {
+    "build": "microbundle src/index.ts",
+    "clean": "rm -rf dist .rts2_*"
+  },
+  "devDependencies": {
+    "microbundle": "^0.13.0"
+  }
+}

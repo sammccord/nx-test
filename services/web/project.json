@@ -1,0 +1,5 @@
+{
+  "root": "services/web",
+  "projectType": "application",
+  "implicitDependencies": []
+}
