@@ -14,15 +14,21 @@ jobs:
     if: ${{ github.event_name != 'pull_request' }}
     steps:
       - uses: actions/checkout@v2
-        name: Checkout [main]
         with:
+          ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 0
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.20.3
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
         uses: nrwl/nx-set-shas@v2
-      - uses: actions/setup-node@v1 
-        with: 
-          node-version: '14'
-      - run: npm install
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
       - run: npx nx-cloud start-ci-run    
       - run: npx nx affected --target=build --parallel --max-parallel=3
       - run: npx nx affected --target=test --parallel --max-parallel=2
@@ -60,9 +66,18 @@ jobs:
         agent: [ 1, 2, 3 ]
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-        with: 
-          node-version: '14'
-      - run: npm install
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.20.3
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+          cache: 'pnpm'
+      - name: Install dependencies
+        run: pnpm install
       - name: Start Nx Agent ${{ matrix.agent }}
         run: npx nx-cloud start-agent  
