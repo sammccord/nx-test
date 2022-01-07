@@ -5,6 +5,7 @@ dist
 .next
 /tmp
 /out-tsc
+.nx-cache
 
 # dependencies
 node_modules
