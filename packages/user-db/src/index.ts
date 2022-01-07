@@ -11,5 +11,4 @@
  * Do not edit the class manually.
  */
 
-
-export const foo = 'bar'
+export const foo = 'baz';
