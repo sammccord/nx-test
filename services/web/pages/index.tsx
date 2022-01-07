@@ -15,7 +15,7 @@ const Home: NextPage = () => {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Small change. Another small change. One more. Welcome to{' '}
+          Small change. Another small change. One more. One more. Welcome to{' '}
           <a href="https://nextjs.org">Next.js!</a>
         </h1>
 
